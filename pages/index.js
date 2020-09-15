@@ -1,65 +1,124 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import { FiMail } from 'react-icons/fi'
+
+const Container = ({ children, ...props }) => (
+  <div className={`container mx-auto px-10 sm:px-12 ${props.className}`}>
+    {children}
+  </div>
+)
+
+const Navigation = () => {
+  return (
+    <nav>
+      <Container className="flex py-4">
+        <Link href="/">
+          <a style={{ fontSize: 22 }}>Pande Muliada</a>
+        </Link>
+
+        <div className="ml-auto flex items-center">
+          <a
+            href="#"
+            className="ml-10 text-gray hover:text-primary cursor-pointer"
+          >
+            Project
+          </a>
+          <a
+            href="#"
+            className="ml-10 text-gray hover:text-primary cursor-pointer"
+          >
+            Blog
+          </a>
+          <a
+            href="#"
+            className="ml-10 text-gray hover:text-primary cursor-pointer"
+          >
+            Contact
+          </a>
+        </div>
+      </Container>
+    </nav>
+  )
+}
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Pande Muliada ~ Front End Web Developer & UI Designer</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <Navigation />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      <section style={{ minHeight: '700px' }} className="flex sm:items-center">
+        <img
+          className="absolute w-32 opacity-25 pointer-events-none"
+          style={{ top: '130px', left: '50px', zIndex: 1 }}
+          src="/dots.svg"
+        />
+        <Container className="md:grid grid-cols-2">
+          <div>
+            <h1 className="text-lg font-mulish">
+              <span
+                style={{ color: '#444', fontSize: 25 }}
+                className="font-light"
+              >
+                Hi, I'm Pande Muliada
+              </span>
+              <br />
+              <span className="text-primary text-title font-bold leading-snug">
+                Front End Developer & <br /> UI Designer
+              </span>
+            </h1>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+            <p className="text-gray leading-relaxed mt-8 mb-10">
+              I’m from Indonesia and working as freelance Front End Developer. I
+              have been learning to code since I was 15 years old. I do enjoy
+              programming because I love to solve problem and it fells amazing
+              when I solve problem with programming. I’m looking forward to
+              collaborate with you!
             </p>
-          </a>
-        </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+            <div className="flex items-center">
+              <Link href="mailto:@pandemuliada@gmail.com">
+                <a
+                  role="button"
+                  className="inline-flex items-center bg-primary py-4 px-6 rounded-md text-white hover:opacity-75"
+                >
+                  <FiMail className="mr-2" fontSize={22} />
+                  <span>Email Me</span>
+                </a>
+              </Link>
+              <a href="/" className="text-gray ml-10">
+                Download CV
+              </a>
+            </div>
+          </div>
+          <div className="relative flex justify-end">
+            <div className="relative mt-20 md:mt-0 md:mr-20">
+              <img
+                src="/rounded-rectangle.svg"
+                className="absolute w-48 opacity-25 pointer-events-none"
+                style={{ top: '-60px', right: '-60px', zIndex: -1 }}
+              />
+              <img
+                className="absolute w-32 opacity-50 pointer-events-none"
+                style={{ bottom: '-48px', left: '-48px', zIndex: 1 }}
+                src="/dots.svg"
+              />
+              <img
+                src="/images/avatar.jpg"
+                className="mx-auto w-100 rounded-md"
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   )
 }

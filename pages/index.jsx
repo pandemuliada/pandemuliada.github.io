@@ -98,7 +98,7 @@ const Home = () => {
             <img
               className="absolute w-32 opacity-25 pointer-events-none"
               style={{ top: '-30px', left: '-50px', zIndex: 1 }}
-              src="/dots.svg"
+              src="/images/dots.svg"
             />
             <h1 className="text-lg font-mulish">
               <span
@@ -140,14 +140,14 @@ const Home = () => {
           <div className="relative flex justify-center md:justify-end order-1 md:order-2">
             <div className="relative md:mt-0 md:mr-20 mb-10 md:mb-0">
               <img
-                src="/rounded-rectangle.svg"
+                src="/images/rounded-rectangle.svg"
                 className="hidden md:block absolute w-48 opacity-25 pointer-events-none"
                 style={{ top: '-60px', right: '-60px', zIndex: -1 }}
               />
               <img
                 className="absolute md:w-32 opacity-50 pointer-events-none"
                 style={{ bottom: '-48px', left: '-48px', zIndex: 1 }}
-                src="/dots.svg"
+                src="/images/dots.svg"
               />
               <img
                 src="/images/avatar.jpg"

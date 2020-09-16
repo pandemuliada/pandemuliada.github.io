@@ -26,6 +26,9 @@ module.exports = {
       normal: 400,
       bold: 700,
     },
+    boxShadow: {
+      default: '0 5px 10px rgba(224, 220, 220, 0.25)',
+    },
     extend: {},
   },
   variants: {},

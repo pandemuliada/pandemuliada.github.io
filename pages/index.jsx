@@ -1,6 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { FiEye, FiLink, FiMail } from 'react-icons/fi'
+import {
+  FaDribbble,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+  FaTwitter,
+} from 'react-icons/fa'
 import Container from '../components/Container'
 import Navigation from '../components/Navigation'
 
@@ -14,6 +22,56 @@ const projects = [
     slug: 'urfurniture',
     image: 'urfurniture.png',
     link: 'https://urfurniture.netlify.app',
+  },
+]
+
+const skills = [
+  {
+    slug: 'html',
+    image: 'html.png',
+  },
+  {
+    slug: 'css',
+    image: 'css.png',
+  },
+  {
+    slug: 'js',
+    image: 'js.png',
+  },
+  {
+    slug: 'react',
+    image: 'react.png',
+  },
+  {
+    slug: 'figma',
+    image: 'figma.png',
+  },
+]
+
+const accounts = [
+  {
+    link: 'https://t.me/pandemuliada',
+    icon: <FaTelegram fontSize={22} />,
+  },
+  {
+    link: 'https://www.instagram.com/pandemuliada/',
+    icon: <FaInstagram fontSize={22} />,
+  },
+  {
+    link: 'https://twitter.com/pandemuliada/',
+    icon: <FaTwitter fontSize={22} />,
+  },
+  {
+    link: 'https://dribbble.com/pandemuliada',
+    icon: <FaDribbble fontSize={22} />,
+  },
+  {
+    link: 'https://github.com/pandemuliada',
+    icon: <FaGithub fontSize={22} />,
+  },
+  {
+    link: 'https://www.linkedin.com/in/pandemuliada/',
+    icon: <FaLinkedin fontSize={22} />,
   },
 ]
 
@@ -119,31 +177,14 @@ const Home = () => {
               } rounded-md`}
             >
               <img
-                src={`/projects/${image}`}
-                className="rounded-md block mb-5"
-                style={{ boxShadow: '0 5px 10px rgba(224, 220, 220, 0.25)' }}
+                src={`/images/projects/${image}`}
+                className="rounded-md block mb-5 shadow"
               />
               <div className="flex items-center">
-                {/* <Link href={`/projects/${slug}`}>
-                  <a
-                    role="button"
-                    className="inline-flex items-center border border-primary py-2 px-4 rounded-md text-primary hover:bg-primary opacity-75 hover:text-white"
-                  >
-                    <FiEye className="mr-2" fontSize={20} />
-                    <span>Project Detail</span>
-                  </a>
-                </Link> */}
-                <a
-                  href={`/projects/${slug}`}
-                  className="text-gray flex items-center hover:text-primary"
-                >
-                  <FiEye className="mr-2" fontSize={20} />
-                  Project Detail
-                </a>
                 <a
                   href={link}
                   target="_blank"
-                  className="text-gray ml-10 flex items-center hover:text-primary"
+                  className="text-gray flex items-center hover:text-primary"
                 >
                   <FiLink className="mr-2" fontSize={20} />
                   Visit Website
@@ -153,6 +194,61 @@ const Home = () => {
           ))}
         </Container>
       </section>
+
+      <section className="my-16">
+        <Container>
+          <h2 className="text-title font-bold mb-8 text-center">Skills</h2>
+
+          <div className="flex justify-center flex-wrap">
+            {skills.map(({ slug, image }, index) => (
+              <div
+                key={`${slug}_${index}`}
+                className={`shadow rounded-md mt-4 mx-3 md:mx-6`}
+              >
+                <img src={`/images/skills/${image}`} className="w-full block" />
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="mb-10">
+        <Container>
+          <div className="flex items-center flex-wrap bg-primary rounded-md px-8 py-6 md:md:h-24">
+            <p
+              style={{ fontSize: 25 }}
+              className="text-white font-bold tracking-wide mb-5 md:mb-0 text-center md:text-left sm:mr-auto"
+            >
+              Interested working with me?
+            </p>
+            <Link href="mailto:@pandemuliada@gmail.com">
+              <div className="mx-auto sm:m-0">
+                <a
+                  role="button"
+                  className="inline-flex items-center bg-white py-4 px-6 rounded-md text-primary"
+                >
+                  <FiMail className="mr-2" fontSize={20} />
+                  <span>Email Me</span>
+                </a>
+              </div>
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      <footer style={{ backgroundColor: '#efefef' }} className="py-5">
+        <Container className="flex flex-wrap items-center justify-center">
+          {accounts.map(({ link, icon }, index) => (
+            <a
+              href={link}
+              target="_blank"
+              className="inline-block mx-4 my-2 text-gray"
+            >
+              {icon}
+            </a>
+          ))}
+        </Container>
+      </footer>
     </>
   )
 }

@@ -1,4 +1,4 @@
 module.exports = {
-  basePath: 'https://pandemuliada.github.io',
+  basePath: '',
   assetPrefix: 'https://pandemuliada.github.io',
 }

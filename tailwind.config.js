@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: ['./pages/**/*.jsx', './components/**/*.jsx'],
   theme: {
     screens: {
       sm: '640px',
@@ -8,7 +8,7 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
-      mulish: ['Mulish', 'sans-serif'],
+      sans: ['Mulish', 'sans-serif'],
     },
     colors: {
       transparent: 'transparent',

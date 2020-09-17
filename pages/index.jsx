@@ -100,7 +100,7 @@ const Home = () => {
               style={{ top: '-30px', left: '-50px', zIndex: 1 }}
               src="/images/dots.svg"
             />
-            <h1 className="text-lg font-mulish">
+            <h1 className="text-lg">
               <span
                 style={{ color: '#444', fontSize: 25 }}
                 className="font-light"
@@ -240,6 +240,7 @@ const Home = () => {
         <Container className="flex flex-wrap items-center justify-center">
           {accounts.map(({ link, icon }, index) => (
             <a
+              key={link}
               href={link}
               target="_blank"
               className="inline-block mx-4 my-2 text-gray"

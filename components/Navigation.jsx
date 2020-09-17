@@ -6,10 +6,13 @@ const Navigation = () => {
     <nav>
       <Container className="flex py-4">
         <Link href="/">
-          <a style={{ fontSize: 22 }}>Pande Muliada</a>
+          <a style={{ fontSize: 22 }}>
+            <span className="hidden sm:block">Pande Muliada</span>
+            <span className="block sm:hidden">PM</span>
+          </a>
         </Link>
 
-        <div className="sm:ml-auto flex items-center">
+        <div className="ml-auto flex items-center">
           <a
             href="https://pandemuliada.netlify.app"
             target="_blank"

@@ -24,7 +24,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install -g yarn # Install Yarn
-      - run: yarn install
       - run: yarn ci
       - run: yarn build
       - run: yarn export

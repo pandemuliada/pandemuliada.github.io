@@ -1,4 +1,10 @@
 module.exports = {
-  basePath: '',
-  assetPrefix: 'https://pandemuliada.github.io',
+  exportPathMap: async (
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) => {
+    return {
+      '/': { page: '/' },
+    }
+  },
 }
